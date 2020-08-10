@@ -84,9 +84,18 @@ Booking (TourName, EventYear, EventMonth, EventDay, ClientID, Date Booked, Payme
 -- );
 
 use test;
-SELECT TourName, Descroption FROM Tour
-UNION
-SELECT ClientId, Surname FROM Client;
+SELECT TourName, Descroption FROM Tour;
+SELECT GivenName, Surname FROM Client;
+SELECT EventYear, EventMonth, EventDay, EventFee  FROM testEvent;
+SELECT DateBooked, Payment  FROM Booking;
 
-;
+SELECT COUNT (EventMonth)
+FROM Booking
+WHERE EventMonth = 'JAN';
 
+SELECT COUNT (EventMonth)
+FROM Booking
+WHERE EventMonth = 'FEB';
+
+SELECT ClientId, TourName, Payment From Booking 
+WHERE Payment > HAVING AVG(Payment) ;
