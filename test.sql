@@ -83,5 +83,10 @@ Booking (TourName, EventYear, EventMonth, EventDay, ClientID, Date Booked, Payme
 --     FOREIGN KEY (ClientID) REFERENCES Client
 -- );
 
+use test;
+SELECT TourName, Descroption FROM Tour
+UNION
+SELECT ClientId, Surname FROM Client;
 
+;
 
